@@ -7,6 +7,7 @@ export const A = () => {
     <SafeAreaView>
       <Text>A</Text>
       <NavigateButton screen="B" />
+      <NavigateButton screen="GlobalModal" />
     </SafeAreaView>
   );
 };
