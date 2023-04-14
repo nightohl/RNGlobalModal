@@ -10,10 +10,20 @@ const Stack = createStackNavigator();
 export const MyStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="A" component={A} />
-      <Stack.Screen name="B" component={B} />
-      <Stack.Screen name="C" component={C} />
-      <Stack.Screen name="GlobalModal" component={GlobalModal} />
+      <Stack.Group>
+        <Stack.Screen name="A" component={A} />
+        <Stack.Screen name="B" component={B} />
+        <Stack.Screen name="C" component={C} />
+      </Stack.Group>
+
+      <Stack.Group
+        screenOptions={{
+          presentation: 'modal',
+          headerShown: false,
+          detachPreviousScreen: false,
+        }}>
+        <Stack.Screen name="GlobalModal" component={GlobalModal} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };
